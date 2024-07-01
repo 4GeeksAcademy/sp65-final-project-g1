@@ -2,6 +2,8 @@ import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import "../../styles/store.css";
+
 
 export const Tienda = () => {
     const { store, actions } = useContext(Context);
@@ -36,8 +38,10 @@ export const Tienda = () => {
             <div className="row">
                 {games.map((game, index) => (
                     <div key={index} className="col-md-4">
-                        <div className="card mb-4 shadow-sm">
-                            <img src={game.background_image} className="card-img-top" alt={game.name} />
+                        <div className="card mb-4 shadow-sm comic-button" style={{maxHeight: "50vh", minHeight: "30vh"}}>
+                            <div style={{height: "100%", width: "100%"}}>
+                                <img src={game.background_image} className="card-img-top border rounded" alt={game.name} style={{ minWidth: "100%", maxHeight: "20vh", objectFit: "cover" }}/>
+                                </div>
                             <div className="card-body">
                                 <h5 className="card-title">{game.name}</h5>
                                 <p className="card-text">Rating: {game.rating}</p>

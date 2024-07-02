@@ -13,9 +13,9 @@ export const LandingPage = () => {
     return (
         <div className="container">
             <h1 className="text-center text-light">TOP JUEGOS</h1>
-            <div className="row flex-nowrap overflow-auto">
+            <div className="row flex-nowrap overflow-auto" style={{ maxWidth: '100%', overflowX: 'scroll', whiteSpace: 'nowrap' }}>
                 {store.topGames.map((game, index) => (
-                    <div key={index} className="card m-3" style={{ width: '18rem' }}>
+                    <div key={index} className="card d-inline-block m-3" style={{ width: '18rem' }}>
                         <img src={game.background_image} className="card-img-top" alt={game.name} />
                         <div className="card-body">
                             <h5 className="card-title">{game.name}</h5>
@@ -32,9 +32,9 @@ export const LandingPage = () => {
             </div>
 
             <h1 className="text-center text-light mt-5">JUEGOS MEJOR VALORADOS</h1>
-            <div className="row flex-nowrap overflow-auto">
+            <div className="row flex-nowrap overflow-auto" style={{ maxWidth: '100%', overflowX: 'scroll', whiteSpace: 'nowrap' }}>
                 {store.bestRatedGames.map((game, index) => (
-                    <div key={index} className="card m-3" style={{ width: '18rem' }}>
+                    <div key={index} className="card d-inline-block m-3" style={{ width: '18rem' }}>
                         <img src={game.background_image} className="card-img-top" alt={game.name} />
                         <div className="card-body">
                             <h5 className="card-title">{game.name}</h5>
